@@ -1,0 +1,381 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000cac;
+    opacity: 0.4;
+    filter: blur(20px);
+    z-index: 999;
+    pointer-events: none;
+    transition: opacity 1.2s ease, filter 1.2s ease;
+  }
+  
+  body.loaded::before {
+    opacity: 0;
+    filter: blur(0);
+  }
+  
+
+/* Menu */
+header {
+    position: fixed; 
+    top: 2%;
+    width: 100%;
+    z-index: 10; 
+    background-color: transparent; 
+}
+
+.home-button {
+      position: absolute;
+      right: 20px;
+      background-color: #00156a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px 40px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background: transparent;
+    gap: 80px;
+}
+
+.menu ul li {
+    margin: 0;
+}
+
+.menu ul li a {
+    color: #000000; 
+    text-decoration: none;
+    font-size: 25px; 
+    transition: all 0.3s ease;
+}
+
+
+.menu ul li a:hover {
+    font-weight: bold;  
+}
+
+
+
+/* Imagem de fundo */
+.backgroundHome {
+    background-image: url('oquesomos.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.backgroundHome .content {
+    text-align: center;
+    z-index: 2; 
+}
+
+.background {
+    background-image: url('contatos.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+
+
+
+
+.backgroundApp {
+    background-image: url('nossoaplicativo.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.backgroundHome .content {
+    text-align: center;
+    z-index: 2; 
+}
+
+.backgroundVisao {
+    background-image: url('visao.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.backgroundVisao .content {
+    text-align: center;
+    z-index: 2; 
+}
+
+
+.backgroundMissao {
+    background-image: url('missao.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.backgroundMissao .content {
+    text-align: center;
+    z-index: 2; 
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Visão-Missão-Serviços*/
+
+.sections {
+    height: 400vh; 
+}
+
+.section {
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    position: relative; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.titulo_direita{
+    position: absolute;
+    font-weight: bold;
+    text-align: right;
+    top: 30%; 
+    right: 10%; 
+    transform: translateY(-50%); 
+    font-size: 8rem; 
+    max-width: 45%; 
+    line-height: 1; 
+    color: #030c88;
+}
+
+.titulo_esquerda{
+    position: absolute;
+    font-weight: bold;
+    text-align: right;
+    top: 30%; 
+    left: 10%; 
+    transform: translateY(-50%); 
+    font-size: 8rem; 
+    max-width: 50%; 
+    line-height: 1; 
+    color: #030c88;
+}
+
+.titulo_centro{
+    position: absolute;
+    font-weight: bold;
+    text-align: right;
+    top: 25%;  
+    transform: translateY(-50%); 
+    font-size: 8rem; 
+    max-width: 45%; 
+    line-height: 1; 
+    color: #030c88;
+}
+
+.texto_centro {
+    position: absolute;
+    text-align: justify;
+    top: 45%; 
+    right: 10%;
+    transform: translateY(-50%); 
+    font-size: 25px; 
+    max-width: 80%; 
+    line-height: 1.6; 
+}
+
+.texto_direita {
+    position: absolute;
+    text-align: justify;
+    top: 70%; 
+    right: 10%; 
+    transform: translateY(-50%); 
+    font-size: 25px; 
+    max-width: 45%; 
+    line-height: 1.6; 
+    
+}
+
+.texto_esquerda {
+    position: absolute;
+    text-align: justify;
+    top: 55%; 
+    left: 10%; 
+    transform: translateY(-50%); 
+    font-size: 25px; 
+    max-width: 55%; 
+    line-height: 1.6; 
+}
+
+
+.texto_esquerda2 {
+    position: absolute;
+    text-align: justify;
+    top: 45%; 
+    left: 10%; 
+    transform: translateY(-50%); 
+    font-size: 25px; 
+    max-width: 55%; 
+    line-height: 1.6; 
+}
+
+.texto_esquerda3 {
+    position: absolute;
+    text-align: justify;
+    top: 88%; 
+    left: 10%; 
+    transform: translateY(-50%); 
+    font-size: 19px; 
+    max-width: 55%; 
+    line-height: 1.6; 
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+/* Contatos */
+
+.backgroundContatos {
+    background-image: url('contatos.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    position: relative;
+    text-align: center;
+}
+
+/* ícones de contato */
+.bloco-contato {
+    position: absolute;
+    top: 65%;
+    left: 10%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    max-width: 300px;
+}
+
+
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Adicione isso */
+    align-items: flex-start; /* Garante alinhamento à esquerda */
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+    gap: 10px; 
+}
+
+.contact-item:hover {
+    color: #000cac;
+}
+
+
+.contact-item:hover img {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(95%) saturate(7455%) hue-rotate(235deg) brightness(89%) contrast(96%);
+}
+/* Ícones de contato */
+.contact-item img.contact-icon {
+    width: 60px;
+    height: auto;
+
+}
+
+
+
+
+/* Imagem de fundo */
+.backgroundContatos {
+    background-image: url('contatos.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .contact-item {
+        flex: 1 1 80%;
+    }
+}
+
+

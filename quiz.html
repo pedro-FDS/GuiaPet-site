@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GuiaPet - Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+
+
+   html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #0c1c83;
+}
+
+.backgroundHome {
+  background-image: url('img/ccc.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #00156a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+.numeroPergunta {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  height: 60vh;
+  text-align: center;
+  right: 5%;
+  position: relative;
+
+}
+
+
+
+.pergunta {
+  font-size: 2.5rem;
+}
+
+.observacao {
+  font-size: 0.95rem;
+  max-width: 710px;
+
+}
+
+
+
+    .opcoes {
+      position: fixed;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10rem;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 1rem 0;
+      background: transparent;
+      z-index: 10;
+    }
+
+   /* Adiciona transição suave e efeito de zoom */
+/* Container de cada opção (como o que envolve cada porte) */
+.opcao {
+  cursor: pointer;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Imagens dos pets */
+.opcao img {
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom ao passar o mouse */
+.opcao:hover img {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+/* Transição geral da página */
+body {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+    .opcao.pequeno img { width: 280px; }
+    .opcao.medio img { width: 250px; margin: 0 auto; }
+    .opcao.grande img { width: 450px; }
+    .opcao.curto img { width: 600px; }
+    .opcao.energia img { width: 450px; }
+    .opcao.energia1 img { width: 500px; }
+    .opcao.tem img { width: 400px; }
+    .opcao.frio img { width: 650px; }
+    .opcao.latido img { width: 550px; }
+
+
+
+    .opcao span {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .question {
+      display: none;
+    }
+
+    .question.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <section class="backgroundHome">
+
+  <div class="header">
+    <a href="index.html" class="home-button">Página inicial</a>
+    <div class="numeroPergunta" id="numeroPergunta">1/6</div>
+  </div>
+
+  <form id="quizForm" action="resposta.php" method="POST">
+
+    <!-- PERGUNTA 1 -->
+   <div class="container question active">
+  <div class="pergunta">Qual é o porte que mais te agrada?</div>
+  <div class="observacao">
+    <strong>Observação:</strong> ao clicar em “Grande”, esteja ciente de que independentemente da raça indicada ser amigável, é importante estar sempre em alerta em relação à crianças e outros pets.
+  </div>
+<br>
+<br>
+<br>
+  <!-- Agora dentro da pergunta -->
+  <div class="opcoes" style="  left: 54%;">
+    <label class="opcao pequeno"><input type="radio" name="porte" value="pequeno" hidden /><span>Pequeno</span><img src="img/pequeno1.png" alt="pequeno" /></label>
+    <label class="opcao medio"><input type="radio" name="porte" value="medio" hidden /><span>Médio</span><img src="img/medio1.png" alt="médio" /></label>
+    <label class="opcao grande"><input type="radio" name="porte" value="grande" hidden /><span>Grande</span><img src="img/grande1.png" alt="grande" /> </label>
+  </div>
+</div>
+
+
+
+    <div class="container question">
+      <div class="pergunta">Qual tipo de pelagem você prefere?</div>
+      <div class="opcoes">
+        <label class="opcao curto"><input type="radio" name="pelagem" value="curto" hidden><span>Curto</span><img src="img/curto1.png" alt="curto"></label>
+        <label class="opcao curto"><input type="radio" name="pelagem" value="longo" hidden><span>Longo</span><img src="img/longo1.png" alt="longo"></label>
+      </div>
+    </div>
+
+    <div class="container question">
+      <div class="pergunta">Quão energético o cachorro pode ser?</div>
+      <div class="opcoes">
+        <label class="opcao energia"><input type="radio" name="energia" value="baixa" hidden><span>Pouco</span><img src="img/energia_baixa1.png" alt="baixa"></label>
+        <label class="opcao energia"><input type="radio" name="energia" value="media" hidden><span>Mediano</span><img src="img/energia_media1.png" alt="media"></label>
+        <label class="opcao energia1"><input type="radio" name="energia" value="alta" hidden><span>Muito</span><img src="img/energia_alta1.png" alt="alta"></label>
+      </div>
+    </div>
+
+    <div class="container question">
+      <div class="pergunta">Você tem outros pets/crianças em <br>casa ou pretende ter?</div>
+<div class="observacao">
+    <strong>Observação:</strong> ao clicar em “Não”, a maior parte de nossas indicações são baseadas em raças que não possuem um bom convívio com outros pets ou crianças.
+  </div>
+
+      <div class="opcoes" style="gap: 40rem;">
+       
+        <label class="opcao energia"><input type="radio" name="outrosseres" value="nao" hidden><span>Não</span><img src="img/nao_tem1.png" alt="nao"></label>
+         <label class="opcao tem"><input type="radio" name="outrosseres" value="sim" hidden><span>Sim</span><img src="img/tem_crianca_pet.png" alt="sim"></label>
+      </div>
+    </div>
+
+    <div class="container question">
+      <div class="pergunta">O ambiente onde você mora tende a ser <br>quente ou frio?</div>
+      <div class="opcoes" style="gap: 20rem;">
+        <label class="opcao energia1"><input type="radio" name="clima" value="quente" hidden><span>Quente</span><img src="img/clima_quente.png" alt="quente"></label>
+        <label class="opcao frio"><input type="radio" name="clima" value="frio" hidden><span>Frio</span><img src="img/clima_frio.png" alt="frio"></label>
+      </div>
+    </div>
+
+    <div class="container question">
+      <div class="pergunta">Você tem problema com cachorros <br>que latem muito?</div>
+      <div class="opcoes" style="gap: 30rem;">
+        <label class="opcao latido"><input type="radio" name="latido" value="nao" hidden><span>Sim</span><img src="img/latido_nao1.png" alt="nao"></label>
+        <label class="opcao tem"><input type="radio" name="latido" value="sim" hidden><span>Não</span><img src="img/latido_sim1.png" alt="sim"></label>
+      </div>
+    </div>
+
+  </form>
+
+  <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    const questions = document.querySelectorAll('.question');
+    const numeroPergunta = document.getElementById('numeroPergunta');
+    let currentQuestion = 0;
+
+    function showNextQuestion() {
+      questions[currentQuestion].classList.remove('active');
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        questions[currentQuestion].classList.add('active');
+        numeroPergunta.textContent = `${currentQuestion + 1}/${questions.length}`;
+      } else {
+        document.getElementById('quizForm').submit();
+      }
+    }
+
+    document.querySelectorAll('.opcao input').forEach(input => {
+      input.addEventListener('change', () => setTimeout(showNextQuestion, 300));
+    });
+  </script>
+</section>
+</body>
+</html>

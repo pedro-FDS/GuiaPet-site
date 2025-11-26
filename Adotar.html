@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Pet - Adote!</title>
+    <link rel="stylesheet" href="pet.css">
+     <script>
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif;
+        }
+        .adotar-section {
+            background-image: url('adotar.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding-right: 10%;
+            text-align: right;
+            color: #000;
+        }
+        .adotar-title {
+            font-size: 6rem;
+            font-weight: bold;
+            top: 10%;
+            margin-bottom: 20px;
+            color: #030c88;
+        }
+        .adotar-text {
+            font-size: 23px;
+            text-align: justify;
+            line-height: 1.6;
+            max-width: 50%;
+            margin-bottom: 30px;
+        }
+        .ong-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        .ong-buttons a {
+            background-color: #00156a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .ong-buttons a:hover {
+            background-color: #000a4d;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1200px) {
+            .adotar-title {
+                font-size: 3rem;
+            }
+            .adotar-text {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 900px) {
+            .adotar-section {
+                align-items: center;
+                padding: 0 5%;
+            }
+            .adotar-text {
+                max-width: 90%;
+                text-align: center;
+            }
+            .ong-buttons {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 500px) {
+            .adotar-title {
+                font-size: 2.5rem;
+            }
+            .adotar-text {
+                font-size: 16px;
+            }
+            .ong-buttons a {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="quiz.html" class="home-button">Qual raça é a ideal para você?</a>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">O que somos?</a></li>
+                <li><a href="Visao.html">Visão</a></li>
+                <li><a href="Missao.html">Missão</a></li>
+                <li><a href="NossoAplicativo.html">Nosso aplicativo</a></li>
+                <li><a href="Contatos.html">Contatos</a></li>
+                <li><a href="Adotar.html" style="color: #000cac; text-decoration: underline; font-weight: bold;">Adote!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="adotar-section">
+        <div class="adotar-title">Por que adotar?</div>
+        <div class="adotar-text">
+            Adotar é mais que levar um animal para casa: é oferecer uma segunda chance, transformar vidas e criar laços que duram para sempre. Cada olhar, cada gesto de carinho é um lembrete de que amor se multiplica. O Guia Pet aprecia e encoraja todos que adotam, pois cada adoção transforma vidas. Seja você a mudança que quer ver no mundo animal.
+        </div>
+
+        <div class="adotar-title" style="font-size: 3rem; margin-bottom: 15px;">Onde adotar</div>
+        <div class="adotar-text" style="font-size: 20px; max-width: 50%; margin-bottom: 20px;">
+            Confira as ONGs de proteção animal em cada cidade do ABC Paulista e São Paulo e ajude um animal a encontrar um lar.
+        </div>
+
+        <div class="ong-buttons">
+            <a href="https://www.instagram.com/barthoprotecaoanimal?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">São Caetano</a>
+            <a href="https://www.instagram.com/uapa_ong?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Santo André</a>
+            <a href="https://www.instagram.com/ong100porcentoprotecao?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">São Bernardo</a>
+            <a href="https://www.instagram.com/institutoluisamelloficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Ribeirão</a>
+            <a href="https://www.instagram.com/uipasp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">São Paulo</a>
+        </div>
+    </section>
+</body>
+</html>
